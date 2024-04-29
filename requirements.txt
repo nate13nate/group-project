@@ -1,2 +1,4 @@
 pymongo==4.7.0
 flask==3.0.3
+uuid==1.30
+flask-cors==4.0.0
