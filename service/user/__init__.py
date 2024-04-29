@@ -2,9 +2,11 @@ import time
 
 from mongo import db
 
-TOKEN_LIFETIME = 86400000
+TOKEN_LIFETIME = 3600000
 
 def authenticate(token: str):
+    if token is None:
+        raise Exception('Invalid token')
     user = db.user.find_one({ 'token': token })
     admin = db.admin.find_one({ 'token': token })
 
